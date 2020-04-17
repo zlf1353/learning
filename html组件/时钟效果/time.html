@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style id="css">
+        #box{width: 200px;height: 200px;border: 1px solid black;position: relative;border-radius: 50%;margin: 100px auto;}
+        #list{height: 100%;list-style: none}
+        #list li{width: 1px;height: 6px;background:#000;
+        position: absolute;
+        left: 99px;top:0;transform-origin: center 100px;}
+        #list li:nth-child(5n+1){width: 2px;height:10px;}
+        #ico,#hour,#min,#sec{position:absolute;background: black;}
+        #ico{width: 10px;height: 10px;border-radius: 50%;left: 95px;top: 95px;}
+        #hour{width:4px;height:50px;left:98px;top:50px;
+        transform-origin:bottom;}
+        #min{width:2px;height:70px;left:99px;top:30px;background:#300;
+        transform-origin:bottom;}
+        #sec{width: 2px;height: 90px;left: 99px;;top: 10px;background: brown;
+        transform-origin: bottom;}
+        #box2{height: 100px;width: 100px;transform-origin:center 50px;;transform:rotate(20deg);background-color: brown;}
+</style>
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var hour=document.getElementById("hour");
+            var list=document.getElementById("list");
+            var min=document.getElementById("min");
+            var sec=document.getElementById("sec");
+            var css=document.getElementById("css");
+
+            var lis="";
+
+            for(let i=0;i<60;i++)
+            {
+                lis +="<li></li>";
+                css.innerHTML+="#list li:nth-of-type("+(i+1)+"){ transform:rotate( "+i*6+"deg )}";
+            }
+            list.innerHTML=lis;
+            totime();
+            setInterval(totime,1000);
+            function totime()
+            {
+                var date=new Date();
+                var s=date.getSeconds();
+			    var m=date.getMinutes()+s/60;
+			    var h=date.getHours()+m/60;
+
+                hour.style.webkitTransform="rotate("+h*30+"deg)";
+                min.style.WebkitTransform=" rotate( "+ m*6 +"deg ) ";
+			sec.style.WebkitTransform=" rotate( "+ s*6 +"deg ) ";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul id="list"></ul>
+        <div id="hour"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+        <div id="ico"></div>
+    </div>
+    <div id="box2">11</div>
+    
+</body>
+</html>
