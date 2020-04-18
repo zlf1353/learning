@@ -1,0 +1,13 @@
+@charset "utf-8";
+#map{/* 地图 */
+    margin: 0 auto;/* 居中 */
+    border: 1px solid #000;
+    font-size: 0;/* /ont-size为0的妙用（消除内联元素间的间隔）*/
+}
+span{
+    box-sizing: border-box;/* 消除边框影响*/
+    display: inline-block;/
+    border: 1px solid #000;
+}
+span.snake{background: blue;}
+span.food{background: yellow;}
