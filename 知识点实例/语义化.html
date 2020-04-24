@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *{
+            text-align: center;
+            margin: 15px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        header nav footer{
+            width: 100%;
+        }
+        header{
+            background: darkorchid;
+        }
+        div{
+            overflow: hidden;
+        }
+        main{
+            height: 400px;
+            background: cadetblue;
+            overflow: hidden;
+        }
+        aside{
+            background: coral;
+            height: 250px;
+            width: 200px;
+        }
+        section{
+            background: cyan;
+            position: relative;
+            left: 100px;
+            height: 250px;
+            width: 70%;
+        }
+        footer{
+            background: darkgreen;
+        }
+        nav{
+            background: darkslategrey;
+        }
+
+    </style>
+</head><!--语义化标签中的内容默认是没有任何样式效果的，和<div>标签的效果一样，只是语义不一样-->
+<body >
+    <header>
+        <p>header</p>
+        <p>定义文档或者文档的部分区域的页眉，应作为介绍内容或者导航链接栏的容器。</p>
+    </header>
+    <nav>
+        <p>nav</p>
+        <p>描述一个含有多个超链接的区域，该区域包含跳转到其他页面或页面内部其他部分的链接列表。</p>
+        <a href="https://github.com/zlf1353/hello-world">github</a>
+        <a href="https://github.com/zlf1353/hello-world">github</a>
+    </nav>
+    <div>
+    <main>
+        <p>main</p>
+        <p > 定义文档的主要内容，该内容在文档中应当是独一无二的</p>
+        <div style="display: flex;overflow: hidden;">
+            <aside>
+                <p>aside</p>
+                <p>表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分且可以被单独的拆分出来而不会影响整体</p>
+            </aside>
+            <section>
+                <p>区域</p>
+            </section>
+        </div>
+
+    </main>
+</div>
+    <footer>页脚</footer>
+</body>
+</html>
