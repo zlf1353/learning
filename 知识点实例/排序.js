@@ -92,4 +92,19 @@ var sortArray = function (nums) {
 };
 
 
-
+//5.选择排序
+var sortArray = function (nums) {
+  for (let i = 0; i < nums.length; i++) {
+    //记录最小的数和它的index，放到最前面去
+    let min = nums[i]
+    let minindex = i
+    for (let j = i; j < nums.length; j++) {
+      if (nums[j] < min) {
+        min = nums[j]
+        minindex = j
+      }
+    }
+    [nums[i], nums[minindex]] = [nums[minindex], nums[i]]
+  }
+  return nums
+};
