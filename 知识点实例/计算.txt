@@ -1,0 +1,30 @@
+//乘法
+console.log(Infinity * Infinity)//Infinity
+console.log(Infinity * 0)//NaN
+console.log(Infinity * 5)//Infinity
+console.log(0 * 5)//0
+
+
+//除法 看乘法
+console.log(Infinity / Infinity)//NaN
+console.log(Infinity / 0)//Infinity
+console.log(Infinity / 5)//Infinity
+
+console.log(0 / Infinity)//0
+console.log(0 / 0)//NaN
+console.log(0 / 5)//NaN
+//互换
+console.log(4 / Infinity)//0
+console.log(4 / 0)//Infinity
+
+//模
+console.log(Infinity % Infinity)//NaN
+console.log(Infinity % 0)//NaN
+console.log(Infinity % 5)//NaN
+
+console.log(0 % Infinity)//0
+console.log(0 % 0)//NaN
+console.log(0 % 5)//0
+
+console.log(4 % Infinity)//4
+console.log(4 % 0)//NaN
