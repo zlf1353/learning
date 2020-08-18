@@ -153,3 +153,40 @@ function buildHeap (nums) {
     adjustHeap(nums, i, size);
   }
 }
+
+//归并排序
+var sortArray = function (nums) {
+  return splitList(nums)
+};
+// 拆分数组
+function splitList (list) {
+  let len = list.length
+  //！！！必须，不然报错
+  if (len === 1) return list
+  let mid = len >> 1
+  //slice
+  let left = list.slice(0, mid)
+  let right = list.slice(mid)
+  //！！递归调用
+  return mergeList(splitList(left), splitList(right))
+}
+// 合并, 排序数组
+function mergeList (left, right) {
+  let res = []
+  let il = 0, lenl = left.length
+  let ir = 0, lenr = right.length
+  while (il < lenl && ir < lenr) {
+    if (left[il] < right[ir]) {
+      res.push(left[il++])
+    } else {
+      res.push(right[ir++])
+    }
+  }
+  while (il < lenl) {
+    res.push(left[il++])
+  }
+  while (ir < lenr) {
+    res.push(right[ir++])
+  }
+  return res
+}
