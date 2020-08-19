@@ -190,3 +190,24 @@ function mergeList (left, right) {
   }
   return res
 }
+
+//7.桶排序
+
+function countingSort (nums) {
+  //求最大值最小值
+  let min = Math.min(...nums)
+  let max = Math.max(...nums)
+  let res = []
+  for (let i = 0; i < nums.length; i++) {
+    res[nums[i]] = res[nums[i]] + 1 || 1
+  }
+  let index = 0
+  //桶拿出来
+  for (let i = min; i <= max; i++) {
+    while (res[i] > 0) {
+      nums[index++] = i
+      res[i]--
+    }
+  }
+  return nums
+}
